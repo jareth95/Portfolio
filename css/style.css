@@ -1,0 +1,451 @@
+*{
+    margin: 0;
+
+}
+#topContainer {
+    width: 70%;
+    margin: auto;
+    padding: 1.2rem 2rem;
+    
+}
+header {
+    background-color: #282c2e; 
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;  
+    padding-bottom: 1rem;
+}
+.heading {
+    font-size: 2.5rem;
+}
+#menuItems {
+    overflow-x: visible;
+    margin-top: 0.5rem;
+    display: block;
+   
+}
+.nav-scrolled {
+    opacity: 0.8;
+}
+nav a {
+    text-decoration: none;
+    color: #328ba8;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    
+}
+nav a::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#328ba8;
+    z-index: -1;
+    transform: scalex(0);
+    /* transform-origin: right; */
+    transition: transform 300ms ease-in;
+}
+nav a:hover::after {
+    transform: scalex(1);
+    /* transform-origin: left; */
+}
+nav a:hover {
+    color: #282c2e;
+    text-decoration: none;
+}
+#home {
+    text-decoration: none;
+    color:#328ba8;
+    margin-right: 2rem;
+    font-size: 2rem;
+    display: inline-block;
+    width: 30%;
+}
+#top {
+    background-image: url("/image/pexels-lukas-574071.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    height: 90vh;
+    width: 100%;
+    margin-top: 5.3rem;
+}
+.title {
+    text-align: center;
+    position: relative;
+    line-height: 60px;
+    color:#328ba8;
+}
+.margin {
+    margin: 1.5rem;
+}
+.title::after{
+    content: '';
+    background: #328ba8;
+    width: 80px;
+    height: 3px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#about {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 2rem;
+    background-color:#282c2e;
+}
+#aboutImage {
+    width: 100%;
+}
+#aboutMe {
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    margin-left: 3rem;
+    max-height: 250px;
+    margin-top: 10rem ;
+    border: 3px solid  #328ba8;
+}
+#imageMe {
+    width: 100%;
+    border: 3px solid  #328ba8;
+    border-radius: 500px;
+}
+.wrapContainer {
+    width: 100%;
+    background-color: #282c2e;
+}
+.skillsImages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexBox{
+    flex: 1;
+    flex-basis: 25%;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    text-align: center;
+    border: 3px solid #328ba8;
+    box-shadow: 20px 20px 20px currentColor;
+    color: #282c2e;
+}
+.flexBox img {
+    height: 16.875rem;
+    width: 16.875rem;
+}
+#skills, #projects, #contact{
+    width: 70%;
+    margin: auto;
+}
+
+.hr {
+    border: 0; 
+    border-top: 3px solid #328ba8;
+    margin: 0;
+}
+input[type=text], input[type=email], textarea {
+    padding: 12px 20px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}
+.inputwrapper {
+    padding: 1rem;
+}
+.newline {
+    display: block;
+    margin-bottom: 5px;
+}
+form {
+    color: #328ba8;
+    width: 50%;  
+    margin: auto;
+    background-color: #282c2e;
+}
+.submitForm {
+    margin-left: 1rem;
+    background-color: #328ba8;
+    color: #282c2e;
+    border: 2px solid #328ba8;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 4rem;
+}
+.fourBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 0rem;
+    margin: auto;
+    width: 50%;
+}
+.box1 {
+    flex-basis: 15%;
+}
+.box1 img {
+    width: 100%; 
+    height:100%;
+}
+
+.projectsDiv {
+    color: #328ba8;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    padding: 2rem 0;
+}
+.project {
+    flex-basis: 48%;
+    background-image: url("/image/pexels-lukas-574071.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 18.75rem;
+    overflow-x: hidden;
+}
+.projectTitle1, .projectTitle2, .projectTitle3, .projectTitle4 {
+    color: transparent;
+    margin: 1rem 0 0 1rem;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    transition: color 50ms 350ms;
+}
+.project:hover .projectTitle1, .project:hover .projectTitle2, .project:hover .projectTitle3, .project:hover .projectTitle4 {
+    color: #282c2e;
+}
+.projectTitle1::after {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -2rem;
+    bottom: -0.25rem;
+    width: calc(100% + 4rem);
+    background: #328ba8;
+    z-index: -1;
+    transform: scaleX(0.075);
+    transform-origin: left;
+    transition: transform 350ms ease-in;
+}
+.projectTitle2::after {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -1.6rem;
+    bottom: -0.25rem;
+    width: calc(100% + 4rem);
+    background: #328ba8;
+    z-index: -1;
+    transform: scaleX(0.075);
+    transform-origin: left;
+    transition: transform 350ms ease-in;
+}
+.projectTitle3::after {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -1.7rem;
+    bottom: -0.25rem;
+    width: calc(100% + 4rem);
+    background: #328ba8;
+    z-index: -1;
+    transform: scaleX(0.075);
+    transform-origin: left;
+    transition: transform 350ms ease-in;
+}
+.projectTitle4::after {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -1.1rem;
+    bottom: -0.25rem;
+    width: calc(100% + 4rem);
+    background: #328ba8;
+    z-index: -1;
+    transform: scaleX(0.075);
+    transform-origin: left;
+    transition: transform 350ms ease-in;
+}
+.project:hover .projectTitle1::after, .project:hover .projectTitle2::after, .project:hover .projectTitle3::after, .project:hover .projectTitle4::after {
+    transform: scaleX(1);
+}
+.projectContent {
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    margin-top: 1rem;
+    overflow: visible;
+    color: transparent;
+    transition: color 250ms 550ms;
+}
+.project:hover .projectContent {
+    color: #328ba8;
+}
+.projectContent::after {
+    content: '';
+    position: absolute;
+    top: -0.75rem;
+    bottom: -0.75rem;
+    left: -0.75rem;
+    right: -0.75rem;
+    background: #282c2e;
+    z-index: -1;
+    transform: scaleY(0);
+    transition: transform 350ms ease-in 350ms;
+    transform-origin: top;
+}
+.project:hover .projectContent::after {
+    transform: scaleY(1);
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
+.fade-in.appear {
+    opacity: 1;
+}
+.from-left {
+    grid-column: 2 / 3;
+    transform: translateX(-50%);
+}
+.from-right {
+    grid-column: 3 / 4;
+    transform: translateX(50%);
+}
+.from-left,
+.from-right {
+    transition: opacity 400ms ease-in, 
+    transform 750ms ease-in;
+    opacity: 0;
+}
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+/* Typewriter Animation */
+
+.anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 16em;
+    }
+}
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+.line{
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;transform: translateY(-50%);
+    color: #328ba8;
+}
+.headingWrap {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    background-color:  #282c2e;
+    top: 40%;
+    padding-top: 2rem;
+}
+footer {
+    background-color: #282c2e;
+    text-align: center;
+    min-height: 5rem;
+    padding: 1rem;
+}
+#footerB {
+    text-decoration: none;
+    color: #328ba8;
+    font-size: 2rem;
+}
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+@media only screen and (max-width:900px){
+   #skills, #projects, #contact, form, .fourBox, #about {
+       width: 100%;
+   } 
+   .fourBox {
+       padding: 2.5rem 1.5rem;
+   }
+   .projectsDiv {
+       width: 100%;
+   }
+   #about {
+       flex-direction: column;
+
+   }
+   #imageMe {
+       width: 50%;
+   }
+   .menu-icon {
+    display: block;
+    cursor: pointer;
+   }
+   #menuItems {
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background: #282c2e;
+        width: 30%;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    nav a {
+        display: block;
+    }
+    .project {
+        margin: 1rem;
+        }
+    .headingWrap{
+        width: 95%;
+    }
+    #home {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:600px){
+    .projectsDiv {
+        flex-direction: column;
+        padding: 0;
+    } 
+}
