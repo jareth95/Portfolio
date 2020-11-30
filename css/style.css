@@ -1,20 +1,18 @@
 *{
     margin: 0;
-
 }
 #topContainer {
     width: 70%;
     margin: auto;
-    padding: 1.2rem 2rem;
-    
 }
 header {
     background-color: #282c2e; 
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 100;
     width: 100%;  
     padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 .heading {
     font-size: 2.5rem;
@@ -23,7 +21,7 @@ header {
     overflow-x: visible;
     margin-top: 0.5rem;
     display: block;
-   
+    float: right;
 }
 .nav-scrolled {
     opacity: 0.8;
@@ -37,7 +35,6 @@ nav a {
     opacity: 1;
     position: relative;
     z-index: 1;
-    
 }
 nav a::after {
     content:"";
@@ -63,10 +60,11 @@ nav a:hover {
 #home {
     text-decoration: none;
     color:#328ba8;
-    margin-right: 2rem;
     font-size: 2rem;
-    display: inline-block;
-    width: 30%;
+    float: left;
+}
+.clear {
+    clear: both;
 }
 #top {
     background-image: url("/image/pexels-lukas-574071.jpg");
@@ -76,7 +74,7 @@ nav a:hover {
     opacity: 0.5;
     height: 90vh;
     width: 100%;
-    margin-top: 5.3rem;
+    margin-top: 5rem;
 }
 .title {
     text-align: center;
@@ -107,19 +105,18 @@ nav a:hover {
     background-color:#282c2e;
 }
 #aboutImage {
-    width: 100%;
+    flex-basis: 50%;
 }
 #aboutMe {
-    width: 100%;
-    background-color: #fff;
-    padding: 2rem;
-    margin-left: 3rem;
-    max-height: 250px;
-    margin-top: 10rem ;
+    flex-basis: 45%;
+    background-color: #282c2e;
+    color: #fff;
+    padding: 0.5rem;
     border: 3px solid  #328ba8;
+    margin: 5rem 0;
 }
 #imageMe {
-    width: 100%;
+    width: 80%;
     border: 3px solid  #328ba8;
     border-radius: 500px;
 }
@@ -128,6 +125,8 @@ nav a:hover {
     background-color: #282c2e;
 }
 .skillsImages {
+    margin: auto;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,14 +143,17 @@ nav a:hover {
     color: #282c2e;
 }
 .flexBox img {
-    height: 16.875rem;
-    width: 16.875rem;
+    height: 90%;
+    width: 90%;
 }
-#skills, #projects, #contact{
+#skills, #contact{
     width: 70%;
     margin: auto;
 }
-
+#projects {
+    width: 70%;
+    margin: auto;
+}
 .hr {
     border: 0; 
     border-top: 3px solid #328ba8;
@@ -200,12 +202,11 @@ form {
     width: 100%; 
     height:100%;
 }
-
 .projectsDiv {
     color: #328ba8;
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     margin: auto;
     padding: 2rem 0;
 }
@@ -375,7 +376,7 @@ form {
     color: #328ba8;
 }
 .headingWrap {
-    position: relative;
+    position: relative; 
     width: 70%;
     margin: auto;
     background-color:  #282c2e;
@@ -398,30 +399,42 @@ footer {
     margin-left: 20px;
     display: none;
 }
-@media only screen and (max-width:900px){
-   #skills, #projects, #contact, form, .fourBox, #about {
+@media only screen and (max-width:1270px){
+    #contact {
+        width: 100%;
+    }
+    .skillsImages {
+        width: 100%;
+    }
+    #aboutMe {
+        margin: 0;
+    }
+    #topContainer {
+        width: 90%;
+    }
+}   
+@media only screen and (max-width:950px){
+   #skills, #projects, #contact, #about {
        width: 100%;
    } 
+   .fourBox, form{
+    width: 90%;
+   }
    .fourBox {
        padding: 2.5rem 1.5rem;
    }
    .projectsDiv {
        width: 100%;
    }
-   #about {
-       flex-direction: column;
-
-   }
-   #imageMe {
-       width: 50%;
-   }
+   
    .menu-icon {
     display: block;
     cursor: pointer;
+    float: right;
    }
    #menuItems {
         position: absolute;
-        top: 30px;
+        top: 70px;
         right: 10px;
         background: #282c2e;
         width: 30%;
@@ -437,15 +450,28 @@ footer {
     .headingWrap{
         width: 95%;
     }
-    #home {
-        width: 100%;
+    #about {
+        flex-direction: column;
+        
+    }
+    #aboutImage {
+        text-align: center;
+    }
+    #aboutMe {
+        margin-top: 2rem;
+    }
+    #imageMe {
+        width: 50%;
     }
 }
 
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:750px){
     .projectsDiv {
         flex-direction: column;
         padding: 0;
     } 
+    .fourBox, form {
+        width: 100%;
+    }
 }
