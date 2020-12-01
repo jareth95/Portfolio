@@ -7,16 +7,14 @@
 }
 header {
     background-color: #282c2e; 
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;  
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
-.heading {
-    font-size: 2.5rem;
-}
+
 #menuItems {
     overflow-x: visible;
     margin-top: 0.5rem;
@@ -25,6 +23,9 @@ header {
 }
 .nav-scrolled {
     opacity: 0.8;
+}
+#bottom {
+    bottom: -100px;
 }
 nav a {
     text-decoration: none;
@@ -67,14 +68,10 @@ nav a:hover {
     clear: both;
 }
 #top {
-    background-image: url("/image/pexels-lukas-574071.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5;
     height: 90vh;
-    width: 100%;
     margin-top: 5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url("/image/pexels-lukas-574071.jpg");
+    background-size: cover;
 }
 .title {
     text-align: center;
@@ -345,43 +342,34 @@ form {
 }
 /* Typewriter Animation */
 
-.anim-typewriter {
-    animation: typewriter 4s steps(40) 1s 1 normal both,
-    blinkTextCursor 500ms steps(40) infinite normal;
-}
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 16em;
-    }
-}
-@keyframes blinkTextCursor {
-    from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-    }
-    to {
-        border-right-color: transparent;
-    }
-}
-.line{
+.typing {
     position: relative;
-    top: 50%;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;transform: translateY(-50%);
     color: #328ba8;
+    background-color: #282c2e;
+}
+.typing::after {
+    content: "";
+    position: relative;
+    width: 1px;
+    height: 30%;
+    border-right: 2px solid white;
+    animation: blink 0.5s infinite ease;
+    
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .headingWrap {
     position: relative; 
-    width: 70%;
+    top: 45%;
+    width: 35%;
     margin: auto;
-    background-color:  #282c2e;
-    top: 40%;
-    padding-top: 2rem;
 }
 footer {
     background-color: #282c2e;
@@ -411,6 +399,9 @@ footer {
     }
     #topContainer {
         width: 90%;
+    }
+    .headingWrap{
+        width: 50%;
     }
 }   
 @media only screen and (max-width:950px){
@@ -448,7 +439,7 @@ footer {
         margin: 1rem;
         }
     .headingWrap{
-        width: 95%;
+        width: 70%;
     }
     #about {
         flex-direction: column;
@@ -473,5 +464,8 @@ footer {
     } 
     .fourBox, form {
         width: 100%;
+    }
+    .headingWrap{
+        width: 90%;
     }
 }

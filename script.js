@@ -1,3 +1,28 @@
+// Typing effect
+
+const texts = ['Hi my name is Jareth.', 'And I love to code!'];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type() {
+    if(count === texts.length) {
+        count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector('.typing').textContent = letter;
+    if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1500);
+    } else {
+        setTimeout(type, 200);
+    }   
+})();
+
 // toggle nav
 let menuItems = document.getElementById('menuItems');
 let menuIcon = document.getElementById('menuIcon');
@@ -18,7 +43,7 @@ const header = document.querySelector('header');
 const sectionOne = document.getElementById('top');
 
 const sectionOneOptions = { 
-    rootMargin: "-500px 0px 0px 0px"
+    rootMargin: "-700px 0px 0px 0px"
 }
 
 const SectionOneObserver = new IntersectionObserver
@@ -67,3 +92,5 @@ const sliders = document.querySelectorAll('.slide-in');
 sliders.forEach(slider => {
     appearOnScroll.observe(slider);
 });
+
+// Highlight nav on section
