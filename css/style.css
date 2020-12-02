@@ -387,6 +387,10 @@ footer {
     margin-left: 20px;
     display: none;
 }
+.activeHighlight {
+    background-color: #328ba8;
+    color: #282c2e;
+}
 @media only screen and (max-width:1270px){
     #contact {
         width: 100%;

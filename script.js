@@ -94,3 +94,34 @@ sliders.forEach(slider => {
 });
 
 // Highlight nav on section
+
+const sectionsForNavHighlight = document.querySelectorAll('section');
+const activeHighlight = document.querySelector('.activeHighlight');
+const highlightColor = ['background-color: #328ba8;'];
+
+const options = {
+    threshold: 0.4
+}
+
+let highlightNav = new IntersectionObserver(navCheck, options);
+
+function navCheck(entries){
+    entries.forEach(entry => {
+        const className = entry.target.className;
+        const activeAnchor = document.querySelector(`[data-page=${className}]`);
+        // const gradientIndex = entry.target.getAttribute('data-index')
+        console.log(activeAnchor);
+
+        if(entry.isIntersecting) {
+            activeAnchor.classList.add('activeHighlight');
+        } else if (!entry.isIntersecting) {
+            activeAnchor.classList.remove('activeHighlight');
+        }
+        
+        
+    })
+}
+
+sectionsForNavHighlight.forEach(section => {
+    highlightNav.observe(section);
+})

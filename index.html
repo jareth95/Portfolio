@@ -19,11 +19,11 @@
         <a href="#top" id="home">Jareth Smith</a>
         <nav id="menuItems">
             
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+            <a data-page="about" href="#about" >About</a>
+            <a data-page="skills" href="#skills" >Skills</a>
+            <a data-page="projects" href="#projects" >Projects</a>
+            <a data-page="experience" href="#experience" >Experience</a>
+            <a data-page="contact" href="#contact" >Contact</a>
             
         </nav>
         <img src="image/open-menu.png" alt="" class="menu-icon" id="menuIcon">
@@ -40,7 +40,7 @@
     </section>
     <hr class="hr">
     <div class="wrapContainer">
-    <section id="about">
+    <section data-index="0" id="about" class="about">
         <div id="aboutImage" >
             <img id="imageMe" src="/image/123243092_3980459825302448_2415028843719278082_o.jpg" alt="">
         </div>
@@ -50,7 +50,7 @@
         </div>
     </section>
 </div>
-    <section id="skills">
+    <section data-index="0" id="skills" class="skills">
         <h1 class="title margin">Skills</h1>
         <div class="skillsImages">
             <div class="flexBox">
@@ -76,7 +76,7 @@
         </div>
     </section>
     <div class="wrapContainer">
-    <section id="projects">
+    <section data-index="0" id="projects" class="projects">
         <h1 class="title margin">Projects</h1>
         <div class="projectsDiv fade-in">
             <div class="project">
@@ -100,7 +100,7 @@
         </div>
     </section>
     </div>
-    <section id="experience">
+    <section data-index="0" id="experience" class="experience">
         <h1 class="title margin">Experience</h1>
         <div class="container">
             
@@ -150,7 +150,7 @@
     </section>
     <div class="wrapContainer">
         <h1 class="title margin">Get in touch</h1>
-    <section id="contact">
+    <section data-index="0" id="contact" class="contact">
           <form class="contact-form" action="contactform.php" method="POST">
             <div class="inputwrapper">
                 <label for="name" class="newline">Name</label>
