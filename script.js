@@ -73,10 +73,11 @@ const appearOnScroll = new IntersectionObserver
 (function(entries, appearOnScroll) {
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
-            return;
+            entry.target.classList.remove('appear');
+            // return;
         } else {
             entry.target.classList.add('appear');
-            appearOnScroll.unobserve(entry.target);
+            // appearOnScroll.unobserve(entry.target);
         }
     })
 }, appearOptions);
@@ -97,10 +98,10 @@ sliders.forEach(slider => {
 
 const sectionsForNavHighlight = document.querySelectorAll('section');
 const activeHighlight = document.querySelector('.activeHighlight');
-const highlightColor = ['background-color: #328ba8;'];
 
 const options = {
-    threshold: 0.4
+    threshold: 0.6
+    // rootMargin: "-700px 0px 0px 0px"
 }
 
 let highlightNav = new IntersectionObserver(navCheck, options);

@@ -100,17 +100,18 @@ nav a:hover {
     margin: auto;
     padding: 2rem;
     background-color:#282c2e;
+    margin-bottom: 3rem;
 }
 #aboutImage {
-    flex-basis: 50%;
+    flex-basis: 45%;
 }
 #aboutMe {
-    flex-basis: 45%;
+    flex-basis: 55%;
     background-color: #282c2e;
     color: #fff;
     padding: 0.5rem;
     border: 3px solid  #328ba8;
-    margin: 5rem 0;
+    margin: 0;
 }
 #imageMe {
     width: 80%;
@@ -120,6 +121,8 @@ nav a:hover {
 .wrapContainer {
     width: 100%;
     background-color: #282c2e;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 .skillsImages {
     margin: auto;
@@ -391,6 +394,7 @@ footer {
     background-color: #328ba8;
     color: #282c2e;
 }
+
 @media only screen and (max-width:1270px){
     #contact {
         width: 100%;
@@ -406,7 +410,20 @@ footer {
     }
     .headingWrap{
         width: 50%;
+        padding: 0;
     }
+    #imageMe {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+    #about {
+        flex-direction: column;
+        
+    }
+    #aboutImage {
+        text-align: center;
+    }
+    
 }   
 @media only screen and (max-width:950px){
    #skills, #projects, #contact, #about {
@@ -471,5 +488,8 @@ footer {
     }
     .headingWrap{
         width: 90%;
+    }
+    #imageMe {
+        width: 80%;
     }
 }
