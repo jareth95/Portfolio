@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    scroll-behavior: smooth;
 }
 #topContainer {
     width: 70%;
@@ -36,6 +37,7 @@ nav a {
     opacity: 1;
     position: relative;
     z-index: 1;
+    transition: 0.5s ease-in;
 }
 nav a::after {
     content:"";
