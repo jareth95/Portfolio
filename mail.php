@@ -23,7 +23,7 @@ $message = $_POST['message'];
 $to = 'Jareth_smith@hotmail.com'; // PUT YOUR EMAIL ADDRESS HERE
 $email_subject = "Website email from:  $name"; // EDIT THE EMAIL SUBJECT LINE HERE
 $email_body = "You have received a new message from your website's contact form.\n\n"."Here are the details:\n\nName: $name\n\nPhone: $phone\n\nEmail: $email_address\n\nMessage:\n$message";
-$headers = "From: info@louisemcdonald.info\n";
+$headers = "From: jarethsmith@vdb.dai.mybluehost.me\n";
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
 return true;

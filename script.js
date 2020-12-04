@@ -1,6 +1,6 @@
 // Typing effect
 
-const texts = ['Hi my name is Jareth.', 'And I love to code!'];
+const texts = ['Hi my name is Jareth.', 'And I\'m a developer.'];
 let count = 0;
 let index = 0;
 let currentText = "";
