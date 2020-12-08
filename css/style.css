@@ -400,7 +400,7 @@ footer {
     color: #282c2e;
 }
 
-@media only screen and (max-width:1270px){
+@media only screen and (max-width:1320px){
     #contact {
         width: 100%;
     }
