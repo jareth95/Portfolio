@@ -214,8 +214,40 @@ form {
     width: 100%;
     margin: auto;
     padding: 2rem 0;
+    text-decoration: none;
 }
-.project {
+.project1 {
+    flex-basis: 48%;
+    background-image: url("/image/Barking\ boxes\ background.png");
+    background-repeat: no-repeat;
+    background-size: stretch;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 18.75rem;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+.project2 {
+    flex-basis: 48%;
+    background-image: url("/image/pexels-lukas-574071.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 18.75rem;
+    overflow-x: hidden;
+}
+.project3 {
+    flex-basis: 48%;
+    background-image: url("/image/pexels-lukas-574071.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 18.75rem;
+    overflow-x: hidden;
+}
+.project4 {
     flex-basis: 48%;
     background-image: url("/image/pexels-lukas-574071.jpg");
     background-repeat: no-repeat;
@@ -235,8 +267,9 @@ form {
     padding-bottom: 0.5rem;
     transition: color 50ms 350ms;
 }
-.project:hover .projectTitle1, .project:hover .projectTitle2, .project:hover .projectTitle3, .project:hover .projectTitle4 {
+.project1:hover .projectTitle1, .project2:hover .projectTitle2, .project3:hover .projectTitle3, .project4:hover .projectTitle4 {
     color: #282c2e;
+    text-decoration: none;
 }
 .projectTitle1::after {
     content: '';
@@ -290,8 +323,9 @@ form {
     transform-origin: left;
     transition: transform 350ms ease-in;
 }
-.project:hover .projectTitle1::after, .project:hover .projectTitle2::after, .project:hover .projectTitle3::after, .project:hover .projectTitle4::after {
+.project1:hover .projectTitle1::after, .project2:hover .projectTitle2::after, .project3:hover .projectTitle3::after, .project4:hover .projectTitle4::after {
     transform: scaleX(1);
+    text-decoration: none;
 }
 .projectContent {
     margin: auto;
@@ -302,9 +336,11 @@ form {
     overflow: visible;
     color: transparent;
     transition: color 250ms 550ms;
+    text-decoration: none;
 }
-.project:hover .projectContent {
+.project1:hover .projectContent, .project2:hover .projectContent, .project3:hover .projectContent, .project4:hover .projectContent {
     color: #328ba8;
+    text-decoration: none;
 }
 .projectContent::after {
     content: '';
@@ -318,9 +354,17 @@ form {
     transform: scaleY(0);
     transition: transform 350ms ease-in 350ms;
     transform-origin: top;
+    text-decoration: none;
 }
-.project:hover .projectContent::after {
+.project1:hover .projectContent::after,.project2:hover .projectContent::after,.project3:hover .projectContent::after,.project4:hover .projectContent::after {
     transform: scaleY(1);
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
 }
 .fade-in {
     opacity: 0;
