@@ -211,7 +211,7 @@ form {
     color: #328ba8;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     margin: auto;
     padding: 2rem 0;
     text-decoration: none;
@@ -220,12 +220,12 @@ form {
     flex-basis: 48%;
     background-image: url("/image/Barking\ boxes\ background.png");
     background-repeat: no-repeat;
-    background-size: stretch;
+    background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
     height: 18.75rem;
     overflow-x: hidden;
-    text-decoration: none;
+    
 }
 .project2 {
     flex-basis: 48%;
@@ -360,12 +360,7 @@ form {
     transform: scaleY(1);
     text-decoration: none;
 }
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-}
+
 .fade-in {
     opacity: 0;
     transition: opacity 500ms ease-in;
