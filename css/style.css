@@ -129,6 +129,9 @@ nav a:hover {
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
+a .projectContent::after{
+    text-decoration: none;
+}
 .skillsImages {
     margin: auto;
     width: 80%;
@@ -223,18 +226,18 @@ form {
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    height: 18.75rem;
+    min-height: 18.75rem;
     overflow-x: hidden;
     
 }
 .project2 {
     flex-basis: 48%;
-    background-image: url("/image/pexels-lukas-574071.jpg");
+    background-image: url("/PrestigePlastering/PestigePlastering/images/logo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    height: 18.75rem;
+    min-height: 18.75rem;
     overflow-x: hidden;
 }
 .project3 {
@@ -244,7 +247,7 @@ form {
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    height: 18.75rem;
+    min-height: 18.75rem;
     overflow-x: hidden;
 }
 .project4 {
@@ -254,7 +257,7 @@ form {
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    height: 18.75rem;
+    min-height: 18.75rem;
     overflow-x: hidden;
 }
 .projectTitle1, .projectTitle2, .projectTitle3, .projectTitle4 {
