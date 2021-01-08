@@ -126,3 +126,4 @@ function navCheck(entries){
 sectionsForNavHighlight.forEach(section => {
     highlightNav.observe(section);
 })
+
