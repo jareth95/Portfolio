@@ -74,7 +74,7 @@ function generateCart() {
         
         cell1.innerHTML = `<img src="/barkingBoxes/Images/${picSrc}.jpg" alt="" width="200px">`;
         cell2.innerHTML = order[i].name;
-        cell3.innerHTML = order[i].quantity;
+        cell3.innerHTML = `<input class="itemQuantity" type="number" value="${order[i].quantity}"></input>`
         cell4.innerHTML = order[i].price;
         cell5.innerHTML = '<a href="#" class="removeCart">Remove</a>';
 
@@ -156,6 +156,31 @@ function generateCart() {
         localStorage.removeItem('shoppingCart');
     }
 
+    const editQuantity = document.getElementById('edit')
+    editQuantity.addEventListener('click', editTableQuantity)
+
+    function editTableQuantity(e) {
+
+        e.preventDefault()
+        shoppingCart = []
+        
+        for (let i = 1; i < cart.rows.length-2; i++) {
+            console.log(i)
+            let newQuantity = cart.rows[i].cells[2].childNodes[0].value
+            let newPrice = cart.rows[i].cells[3].innerHTML
+            let newName = cart.rows[i].cells[1].innerHTML
+            
+            let newOrder = {
+                name: newName,
+                price: newPrice,
+                quantity: newQuantity,
+            }
+            shoppingCart.push(newOrder)
+        }
+
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+        location.reload()
+    }
 }
 
 
