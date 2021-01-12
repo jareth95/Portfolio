@@ -117,7 +117,9 @@ nav a:hover {
     background-color: #282c2e;
     color: #fff;
     padding: 0.5rem;
-    border: 3px solid  #328ba8;
+    /* border: 3px solid  #328ba8; */
+    border: 6px solid #fff;
+    box-shadow: 0 0 50px #328ba8, inset 0 0 50px #328ba8;
     margin: 0;
 }
 #imageMe {
@@ -177,7 +179,7 @@ a .projectContent::after{
     border: 20px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 50px #328ba8, inset 0 0 50px #328ba8;
-    animation: animate 5s linear infinite;
+    animation: animate 3s linear infinite;
 }
 @keyframes animate {
     0% {
