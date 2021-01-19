@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoDisplay = document.querySelector('#info')
     const resetButton = document.querySelector('#reset')
     const setupButtons = document.querySelector('.setup-buttons')
+    const battleshipImage = document.querySelector('#battleship-image')
+    const battleshipTitle = document.querySelector('#battleship-title')
     
     let userSquares = []
     let computerSquares = []
@@ -213,6 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     startButton.addEventListener('click', () => {
+
+        battleshipImage.classList.remove('splash-battleship-image')
+        battleshipImage.classList.add('splash-battleship-image-game-start')
+        battleshipTitle.classList.remove('splash-title')
+        battleshipTitle.classList.add('splash-title-game-start')
         
         let containsDestroyer = false
         let containsSubmarine = false

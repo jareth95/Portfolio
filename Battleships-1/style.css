@@ -22,12 +22,62 @@ body {
     padding: 2rem;
     width: 70vw;
 }
-.splash-title {
+.splash-title-game-start {
+    position: relative;
     font-family: 'Bangers', cursive;
     font-size: 7rem;
-    color:  hsl(30, 100%, 50%);
+    font-weight: bold;
+    color: hsl(30, 100%, 50%);
+}
+.splash-title {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 0.2vw  lightgray;
+}
+.splash-title::before {
+    content: attr(data-text);
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: hsl(30, 100%, 50%);
+    -webkit-text-stroke: 0vw white;
+    border-right: 2px solid  hsl(30, 100%, 50%);
+    overflow: hidden;
+    animation: animateText 6s linear infinite 
+}
+@keyframes animateText {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
 }
 .splash-battleship-image {
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    transform: rotateY(180deg);
+    pointer-events: none;
+    opacity: 0.25;
+    z-index: -1;
+    animation: slide 9s linear infinite;
+}
+@keyframes slide {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -150vw;
+    }
+}
+.splash-battleship-image-game-start {
     position: absolute;
     top: 5vh;
     left: 20vw;
