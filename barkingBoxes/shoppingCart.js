@@ -74,7 +74,7 @@ function generateCart() {
         
         cell1.innerHTML = `<img src="/barkingBoxes/Images/${picSrc}.jpg" alt="" width="200px">`;
         cell2.innerHTML = order[i].name;
-        cell3.innerHTML = order[i].quantity
+        cell3.innerHTML = `<span class="minus">&hyphen;</span>${order[i].quantity}<span class="plus">&#43;</span>`
         cell4.innerHTML = order[i].price;
         cell5.innerHTML = '<a href="#" class="removeCart">Remove</a>';
 
@@ -123,14 +123,79 @@ function generateCart() {
             shoppingCart.push({
                 name: table.rows[i].cells[1].innerHTML,
                 price: table.rows[i].cells[3].innerHTML,
-                quantity: table.rows[i].cells[2].innerHTML,
+                quantity: table.rows[i].cells[2].innerHTML.match(/\d+/)[0],
             })
         }
-        console.log(shoppingCart)
+       
         localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
         totalCart();
         insertToCart();
     }
+
+    let plusBtn = document.getElementsByClassName('plus');
+    
+    for(let i = 0; i < plusBtn.length; i++){
+
+        cart = document.getElementById('cart');
+        plusBtn[i].addEventListener('click', addItem);
+    }
+    function addItem(event) {
+        
+        event.preventDefault();
+        buttonClicked = event.target;
+        let newQuantity = buttonClicked.parentElement.innerHTML.match(/\d+/)[0];
+        newQuantity = parseInt(newQuantity) + 1
+        buttonClicked.parentElement.innerHTML = `<span class="minus">&hyphen;</span>${newQuantity}<span class="plus">&#43;</span>`
+        
+        localStorage.removeItem('shoppingCart');
+        shoppingCart = [];
+        
+        let table = document.getElementById("cart");
+        
+        for(let i = 1; i < table.rows.length-2; i++ ) {
+            shoppingCart.push({
+                name: table.rows[i].cells[1].innerHTML,
+                price: table.rows[i].cells[3].innerHTML,
+                quantity: table.rows[i].cells[2].innerHTML.match(/\d+/)[0],
+            })
+        }
+        
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+        location.reload()
+    }
+    
+    let minusBtn = document.getElementsByClassName('minus');
+    
+    for(let i = 0; i < plusBtn.length; i++){
+
+        cart = document.getElementById('cart');
+        minusBtn[i].addEventListener('click', minusItem);
+    }
+    function minusItem(event) {
+        
+        event.preventDefault();
+        buttonClicked = event.target;
+        let newQuantity = buttonClicked.parentElement.innerHTML.match(/\d+/)[0];
+        newQuantity = parseInt(newQuantity) - 1
+        buttonClicked.parentElement.innerHTML = `<span class="minus">&hyphen;</span>${newQuantity}<span class="plus">&#43;</span>`
+        
+        localStorage.removeItem('shoppingCart');
+        shoppingCart = [];
+        
+        let table = document.getElementById("cart");
+        
+        for(let i = 1; i < table.rows.length-2; i++ ) {
+            shoppingCart.push({
+                name: table.rows[i].cells[1].innerHTML,
+                price: table.rows[i].cells[3].innerHTML,
+                quantity: table.rows[i].cells[2].innerHTML.match(/\d+/)[0],
+            })
+        }
+        
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+        location.reload()
+    }
+
 
     function totalCart() {
         let Totalcart = 0;
@@ -154,47 +219,6 @@ function generateCart() {
 
     function purchased() {
         localStorage.removeItem('shoppingCart');
-    }
-
-    const editQuantity = document.getElementById('edit')
-    editQuantity.addEventListener('click', editTableQuantity)
-
-    function editTableQuantity(e) {
-
-        e.preventDefault()
-
-       
-        if (editQuantity.innerHTML == 'Done') {
-            shoppingCart = []
-        
-            for (let i = 1; i < cart.rows.length-2; i++) {
-            
-                let newQuantity = cart.rows[i].cells[2].childNodes[0].value
-                let newPrice = cart.rows[i].cells[3].innerHTML
-                let newName = cart.rows[i].cells[1].innerHTML
-                
-                let newOrder = {
-                    name: newName,
-                    price: newPrice,
-                    quantity: newQuantity,
-                }
-                shoppingCart.push(newOrder)
-            }
-
-        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-        location.reload()
-
-        } else if (editQuantity.innerHTML == 'Edit') {
-            editQuantity.innerHTML = 'Done'
-
-            for (let i = 1; i < cart.rows.length-2; i++) {
-
-                let quantity = cart.rows[i].cells[2].innerHTML
-
-                cart.rows[i].cells[2].innerHTML = `<input class="itemQuantity" type="number" value="${quantity}"></input>`
-            }
-        } else return
-        
     }
 }
 

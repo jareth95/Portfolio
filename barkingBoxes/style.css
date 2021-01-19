@@ -37,6 +37,12 @@ nav ul li:hover {
     border-radius: 100px; 
     display: inline-block;
 }
+td span {
+    background: #abddd8;
+    color: #000000;
+    padding: 0px 3px;
+    margin: 0px 7px;
+}
 .displayNone {
     display: none;
 }
