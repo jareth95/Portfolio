@@ -292,7 +292,7 @@ form {
 }
 .project2 {
     flex-basis: 48%;
-    background-image: url("/PrestigePlastering/images/logo.jpg");
+    background-image: url("/image/weather-app.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
