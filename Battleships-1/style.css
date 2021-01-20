@@ -31,15 +31,15 @@ body {
 }
 .splash-title {
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Bangers', cursive;
     font-size: 7rem;
     font-weight: bold;
     color: white;
-    -webkit-text-stroke: 0.2vw  lightgray;
+    -webkit-text-stroke: 0.01vw  lightgray;
 }
 .splash-title::before {
     content: attr(data-text);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Bangers', cursive;
     position: absolute;
     top: 0;
     left: 0;
@@ -53,10 +53,10 @@ body {
 }
 @keyframes animateText {
     0%, 10%, 100% {
-        width: 0;
+        width: -6%;
     }
     70%, 90% {
-        width: 100%;
+        width: 102.9%;
     }
 }
 .splash-battleship-image {
