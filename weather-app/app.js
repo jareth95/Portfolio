@@ -30,6 +30,7 @@ window.addEventListener('load', () => {
     const day2Container = document.querySelector('.forecast2')
     const day3Container = document.querySelector('.forecast3')
     const day4Container = document.querySelector('.forecast4')
+    const temperatureSpanAll = document.querySelectorAll('span')
     
     let currentApi 
     let forecastApi
@@ -62,7 +63,8 @@ window.addEventListener('load', () => {
                 settingCurrentDOMElements(data)
             })
         })
-    }
+    } 
+    
     // setting DOM Elements
     function settingCurrentDOMElements(data) {
 
