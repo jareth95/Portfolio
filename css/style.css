@@ -11,7 +11,7 @@
 }
 #top.active {
     display: block;
-    animation: fade-in 1s linear forwards;
+    animation: fade-in 2s linear forwards;
 }
 header.active {
     background-color: #282c2e; 
@@ -21,7 +21,7 @@ header.active {
     width: 100%;  
     padding-bottom: 1rem;
     padding-top: 1rem;
-    animation: fade-in 1s linear forwards;
+    animation: fade-in 2s linear forwards;
 }
 @keyframes fade-in {
     0% {
@@ -45,7 +45,7 @@ body.active {
     display: none;
 }
 .loading-wrapper.active {
-    background-color: cornsilk;
+    background-color: #282c2e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,8 +53,8 @@ body.active {
     width: 100vw;
     z-index: 1000;
     position: fixed;
-    animation: fade-out 2s linear forwards;
-    animation-delay: 3s;
+    animation: fade-out 3s linear forwards;
+    animation-delay: 4s;
 }
 @keyframes fade-out {
     0% {
@@ -78,22 +78,24 @@ body.active {
     width: 100%;
     height: 100%;
     border: 15px solid transparent;
+    /* mix-blend-mode: overlay; */
 }
 .spinner-text {
     font-size: 2em;
+    color: white;
     animation: loading-opacity 3s ease-in-out infinite;
 }
-.spinner-sector-blue {
+.spinner-sector-1 {
     animation: rotate 2s ease-out infinite;
-    border-top: 15px solid lightblue;
+    border-top: 15px solid white;
 }
-.spinner-sector-red {
+.spinner-sector-2 {
     animation: rotate 2.5s ease-in infinite;
-    border-top: 15px solid lightcoral;
+    border-top: 15px solid #328ba8;
 }
-.spinner-sector-green {
+.spinner-sector-3 {
     animation: rotate 1.5s ease-in-out infinite;
-    border-top: 15px solid lightgreen;
+    border-top: 15px solid #328ba8;
 }
 @keyframes rotate {
     form { transform: rotate(0);}
@@ -370,12 +372,7 @@ nav a:hover {
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
-a .projectContent::after{
-    text-decoration: none;
-}
-a .projectContent:hover::after {
-    text-decoration: none;
-}
+
 .skill-container {
     width: 80%;
     display: flex;
@@ -639,11 +636,9 @@ form {
     overflow: visible;
     color: transparent;
     transition: color 250ms 550ms;
-    text-decoration: none;
 }
 .project1:hover .projectContent, .project2:hover .projectContent, .project3:hover .projectContent, .project4:hover .projectContent {
     color: #328ba8;
-    text-decoration: none;
 }
 .projectContent::after {
     content: '';
@@ -657,16 +652,16 @@ form {
     transform: scaleY(0);
     transition: transform 350ms ease-in 350ms;
     transform-origin: top;
-    text-decoration: none;
 }
 .project1:hover .projectContent::after,.project2:hover .projectContent::after,.project3:hover .projectContent::after,.project4:hover .projectContent::after {
     transform: scaleY(1);
-    text-decoration: none;
 }
-
 .fade-in {
     opacity: 0;
     transition: opacity 500ms ease-in;
+}
+.project-link:hover {
+    text-decoration: none;
 }
 .fade-in.appear {
     opacity: 1;

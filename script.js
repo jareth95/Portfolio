@@ -1,6 +1,6 @@
 // loading screen
 
-setTimeout(screenLoaded, 3000)
+setTimeout(screenLoaded, 4000)
 
 function screenLoaded () {
     const header = document.querySelector('header')
