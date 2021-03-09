@@ -6,7 +6,14 @@
     width: 70%;
     margin: auto;
 }
-header {
+#top {
+    display: none;
+}
+#top.active {
+    display: block;
+    animation: fade-in 1s linear forwards;
+}
+header.active {
     background-color: #282c2e; 
     position: fixed;
     top: 0;
@@ -14,9 +21,94 @@ header {
     width: 100%;  
     padding-bottom: 1rem;
     padding-top: 1rem;
+    animation: fade-in 1s linear forwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+header {
+    display: none;
 }
 body {
     background-color: #282c2e;
+}
+body.active {
+    height: 100vh;
+    overflow: hidden;
+}
+.loading-wrapper {
+    display: none;
+}
+.loading-wrapper.active {
+    background-color: cornsilk;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    position: fixed;
+    animation: fade-out 2s linear forwards;
+    animation-delay: 3s;
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.spinner.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.spinner-sector {
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 15px solid transparent;
+}
+.spinner-text {
+    font-size: 2em;
+    animation: loading-opacity 3s ease-in-out infinite;
+}
+.spinner-sector-blue {
+    animation: rotate 2s ease-out infinite;
+    border-top: 15px solid lightblue;
+}
+.spinner-sector-red {
+    animation: rotate 2.5s ease-in infinite;
+    border-top: 15px solid lightcoral;
+}
+.spinner-sector-green {
+    animation: rotate 1.5s ease-in-out infinite;
+    border-top: 15px solid lightgreen;
+}
+@keyframes rotate {
+    form { transform: rotate(0);}
+    to { transform: rotate(360deg);}
+}
+@keyframes loading-opacity {
+    0%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: .5;
+    }
+    50% {
+        opacity: .1;
+    }
 }
 #menuItems {
     overflow-x: visible;

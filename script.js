@@ -1,3 +1,19 @@
+// loading screen
+
+setTimeout(screenLoaded, 3000)
+
+function screenLoaded () {
+    const header = document.querySelector('header')
+    const body = document.querySelector('body')
+    const spinner = document.querySelector('.loading-wrapper')
+    const topContainer = document.querySelector('#top')
+    
+    header.classList.add('active')
+    topContainer.classList.add('active')
+    spinner.classList.remove('active')
+    body.classList.remove('active')
+}
+
 // Typing effect
 
 const texts = ['Hi my name is Jareth.', 'And I\'m a developer.'];
@@ -70,10 +86,10 @@ const appearOptions = {
 };
 
 const appearOnScroll = new IntersectionObserver
-(function(entries, appearOnScroll) {
+(function(entries) {
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
-            entry.target.classList.remove('appear');
+            // entry.target.classList.remove('appear');
             // return;
         } else {
             entry.target.classList.add('appear');
