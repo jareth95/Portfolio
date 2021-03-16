@@ -7,28 +7,93 @@ body {
     align-items: center;
     padding: 20px;
     background: #abddd8;
+    animation: nav-load 300ms ease-in;
+}
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 nav {
     flex: 1;
     text-align: right;
 }
-nav ul {
-    display: inline-block;
-    list-style-type: none;
+#menuItems {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-    background: #abddd8;
-    color: #000000;
-    border-radius: 30px;
-    padding: 3px;
+.logo img {
+        animation-name: nav-link-load;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+        transform: scale(0);
 }
-nav ul li:hover {
-    background: #ccc;
-    border-radius: 30px;
-    padding: 3px;
-    transition: 0.5s;
+#showCart,
+#menuIcon {
+        animation-name: nav-link-load;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+        transform: scale(0);
+}
+.nav-link {
+    display: inline-block;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    background-color: #555;
+    color: #555;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 500ms ease-in-out;
+    margin: 0 .5rem;
+    animation-name: nav-link-load;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+}
+@keyframes nav-link-load {
+    0% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #abddd8;
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+    transform: scale(1.5);
+}
+.nav-link:hover::before,
+.nav-link:focus::before {
+    transform: scale(0);
+}
+.nav-link:hover,
+.nav-link:focus {
+    color: #abddd8;
 }
 .cartQuantity {
     color: #abddd8;
@@ -63,7 +128,13 @@ hr {
 }
 .container {
     width: 80%;
-    margin: auto;    
+    margin: auto;   
+}
+.container.animation {
+    animation: article-load 300ms ease-in 800ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0; 
 }
 .row {
     display: flex;
@@ -93,6 +164,12 @@ hr {
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
+    border: none;
+}
+.btn.submit {
+    font-size: 1.5rem;
+    display: block;
+    margin: 1rem auto;
 }
 .btn:hover {
     background-color: #ccc;
@@ -102,6 +179,20 @@ hr {
 .small-container {
     max-width: 60%;
     margin: auto;
+    animation: article-load 300ms ease-in 800ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 .col-4 {
     flex-basis: 22%;
@@ -308,7 +399,7 @@ ul {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow: auto;
 }
 .arrow {
     width: 30px;
@@ -412,6 +503,12 @@ input[type=text], input[type=email], textarea {
         display: block;
         cursor: pointer;
     }
+    #menuItems {
+        flex-direction: column;
+        margin-top: .75rem;
+        margin-right: 6rem;
+        background-color: #abddd8;
+    }
 }
 /* media query for menu */
 @media only screen and (max-width:830px){
@@ -428,6 +525,7 @@ input[type=text], input[type=email], textarea {
         padding: 0px;
         z-index: 50;
     }
+    
     nav ul li {
         display: block;
         margin-right: 50px;
@@ -440,7 +538,9 @@ input[type=text], input[type=email], textarea {
     }
     .logo img {
         width: 350px;
+        
     }
+    
     #featured {
         max-width: 100%;
     }
@@ -500,5 +600,9 @@ input[type=text], input[type=email], textarea {
         padding-left: 15px;
         font-size: 1rem;
         font-weight: bold;
+    }
+    #menuItems {
+        margin-top: -20px;
+        margin-right: -20px;
     }
 }
