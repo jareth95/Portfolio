@@ -160,21 +160,47 @@ hr {
 .btn {
     display: inline-block;
     background: #abddd8;
-    color: #000000;
+    color: #555;
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
     border: none;
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
 }
 .btn.submit {
     font-size: 1.5rem;
     display: block;
     margin: 1rem auto;
 }
-.btn:hover {
-    background-color: #ccc;
-    transition-duration: 0.5s;
-
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #555;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 30px;
+}
+.btn:hover::before,
+.btn:focus::before {
+    transform: scaleX(1);
+}
+.btn:hover,
+.btn:focus {
+    color: #abddd8;
+}
+.submit.btn:hover,
+.submit.btn:focus {
+    color: #abddd8;
+    background-color: #555;
 }
 .small-container {
     max-width: 60%;
